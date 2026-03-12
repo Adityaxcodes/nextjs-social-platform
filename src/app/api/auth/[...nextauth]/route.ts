@@ -47,17 +47,17 @@ export const authOptions: NextAuthOptions = {
     signIn: '/login',
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: import("next-auth/jwt").JWT; user?: import("next-auth").User }) {
       if (user) {
         token.id = user.id
-        token.username = (user as { username?: string }).username
+        token.username = (user as { username?: string }).username ?? ""
       }
       return token
     },
-    async session({ session, token }) {
+    async session({ session, token }: { session: import("next-auth").Session; token: import("next-auth/jwt").JWT }) {
       if (session.user) {
         (session.user as { id?: string; username?: string }).id = token.id as string
-        ;(session.user as { id?: string; username?: string }).username = token.username as string
+        ;(session.user as { id?: string; username?: string }).username = token.username ?? ""
       }
       return session
     },
