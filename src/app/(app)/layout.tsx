@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 import Providers from "@/components/providers"
 
-export default async function AppLayout({ children }) {
+export default async function AppLayout({ children }: { children: React.ReactNode }) {
 
   const session = await getServerSession()
 
