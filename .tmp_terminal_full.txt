@@ -1,0 +1,801 @@
+Output of terminal 6325ff97-6da0-466c-b77e-f4a04785107e:
+
+
+[... PREVIOUS OUTPUT TRUNCATED ...]
+
+},
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+
+export default defineConfig({
+  datasource: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+import { defineConfig } from "prisma/config";
+PS C:\Users\HP\Desktop\dc>
+
+

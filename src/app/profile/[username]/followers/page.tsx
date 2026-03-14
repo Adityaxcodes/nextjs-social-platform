@@ -23,7 +23,7 @@ export default async function FollowersPage({ params }: { params: Promise<{ user
 
   if (!user) notFound()
 
-  const followers = user.followers.map((f) => ({
+  const followers = user.followers.map((f:any) => ({
     id: f.follower.id,
     username: f.follower.username ?? '',
     name: f.follower.name ?? f.follower.username ?? '',

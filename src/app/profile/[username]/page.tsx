@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { notFound } from 'next/navigation'
 import { FollowButton } from '@/components/follow-button'
-import { MapPin, Globe, Briefcase, Building2, Calendar } from 'lucide-react'
+import { MapPin, Globe, Briefcase, Building2, Calendar, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -60,6 +60,16 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
       <div className="h-16" />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 space-y-8">
+
+        {/* Back to Feed Button */}
+        <Link
+          href="/feed"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:gap-3"
+          style={{ backgroundColor: '#1a1a1f', color: '#9090ff', border: '1px solid #2a2a35' }}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Feed
+        </Link>
 
         {/* Profile Card */}
         <div className="rounded-2xl p-8 space-y-6" style={{ backgroundColor: '#1a1a1f', border: '1px solid #2a2a35' }}>

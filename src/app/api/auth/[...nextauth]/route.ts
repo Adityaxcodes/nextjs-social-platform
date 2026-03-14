@@ -12,30 +12,45 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error('Email and password are required')
-        }
+        try {
+          console.log('[AUTH] authorize called with email:', credentials?.email)
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
-        })
+          if (!credentials?.email || !credentials?.password) {
+            console.log('[AUTH] Missing email or password')
+            return null
+          }
 
-        if (!user || !user.password) {
-          throw new Error('No account found with this email')
-        }
+          console.log('[AUTH] Querying database for user...')
+          const user = await prisma.user.findUnique({
+            where: { email: credentials.email },
+          })
+          console.log('[AUTH] User found:', !!user, user ? `(id: ${user.id}, has password: ${!!user.password})` : '')
 
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
+          if (!user || !user.password) {
+            console.log('[AUTH] No user found or user has no password')
+            return null
+          }
 
-        if (!isPasswordValid) {
-          throw new Error('Incorrect password')
-        }
+          console.log('[AUTH] Comparing passwords...')
+          const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
+          console.log('[AUTH] Password valid:', isPasswordValid)
 
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          image: user.image,
-          username: user.username,
+          if (!isPasswordValid) {
+            console.log('[AUTH] Password mismatch')
+            return null
+          }
+
+          console.log('[AUTH] Authentication successful for user:', user.id)
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            image: user.image,
+            username: user.username,
+          }
+        } catch (error) {
+          console.error('[AUTH] Unexpected error:', error)
+          return null
         }
       },
     }),

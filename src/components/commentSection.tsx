@@ -1,23 +1,37 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 
-export default function CommentSection({ postId }) {
+interface Comment {
+  id: string;
+  content: string;
+  user: {
+    image: string | null;
+    username: string | null;
+  };
+}
 
-  const [comments, setComments] = useState([])
+interface CommentSectionProps {
+  postId: string;
+}
+
+export default function CommentSection({ postId }: CommentSectionProps) {
+
+  const [comments, setComments] = useState<Comment[]>([])
   const [content, setContent] = useState("")
 
-  async function fetchComments() {
+  const fetchComments = useCallback(async () => {
     const res = await fetch(`/api/comment?postId=${postId}`)
     const data = await res.json()
     setComments(data)
-  }
+  }, [postId])
 
   useEffect(() => {
     fetchComments()
   }, [fetchComments])
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     await fetch("/api/comment", {
@@ -56,8 +70,11 @@ export default function CommentSection({ postId }) {
         {comments.map((comment) => (
           <div key={comment.id} className="flex gap-3">
 
-            <img
-              src={comment.user.image}
+            <Image
+              src={comment.user.image || ""}
+              alt={comment.user.username || "user profile image"}
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full"
             />
 
