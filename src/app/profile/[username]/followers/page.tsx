@@ -1,32 +1,25 @@
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Prisma } from '@prisma/client'
 import { Button } from '@/components/ui/button'
 import { UserList } from '@/components/ui_follow/user-list'
 import { prisma } from '@/lib/prisma'
 
-type ProfileFollowersUser = Prisma.UserGetPayload<{
-  include: {
-    followers: {
-      include: {
-        follower: {
-          select: {
-            id: true
-            username: true
-            name: true
-            image: true
-          }
-        }
-      }
-    }
-  }
-}>
+type FollowerUserSummary = {
+  id: string
+  username: string | null
+  name: string | null
+  image: string | null
+}
+
+type FollowerEdge = {
+  follower: FollowerUserSummary
+}
 
 export default async function FollowersPage({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params
 
-  const user: ProfileFollowersUser | null = await prisma.user.findUnique({
+  const user = await prisma.user.findUnique({
     where: { username },
     include: {
       followers: {
@@ -41,7 +34,7 @@ export default async function FollowersPage({ params }: { params: Promise<{ user
 
   if (!user) notFound()
 
-  const followers = user.followers.map((f) => ({
+  const followers = user.followers.map((f: FollowerEdge) => ({
     id: f.follower.id,
     username: f.follower.username ?? '',
     name: f.follower.name ?? f.follower.username ?? '',

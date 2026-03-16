@@ -2,44 +2,30 @@ import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getServerSession } from 'next-auth'
-import { Prisma } from '@prisma/client'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { Button } from '@/components/ui_follow/button'
 import { UserList } from '@/components/ui_follow/user-list'
 import { prisma } from '@/lib/prisma'
 
-type ProfileFollowingUser = Prisma.UserGetPayload<{
-  include: {
-    following: {
-      include: {
-        following: {
-          select: {
-            id: true
-            username: true
-            name: true
-            image: true
-          }
-        }
-      }
-    }
-  }
-}>
+type FollowingUserSummary = {
+  id: string
+  username: string | null
+  name: string | null
+  image: string | null
+}
 
-type SessionUserFollowing = Prisma.UserGetPayload<{
-  select: {
-    id: true
-    following: {
-      select: {
-        followingId: true
-      }
-    }
-  }
-}>
+type FollowingEdge = {
+  following: FollowingUserSummary
+}
+
+type FollowingIdEdge = {
+  followingId: string
+}
 
 export default async function FollowingPage({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params
 
-  const user: ProfileFollowingUser | null = await prisma.user.findUnique({
+  const user = await prisma.user.findUnique({
     where: { username },
     include: {
       following: {
@@ -60,17 +46,17 @@ export default async function FollowingPage({ params }: { params: Promise<{ user
   let currentUserId: string | null = null
   let currentFollowingIds: string[] = []
   if (currentUserEmail) {
-    const cu: SessionUserFollowing | null = await prisma.user.findUnique({
+    const cu = await prisma.user.findUnique({
       where: { email: currentUserEmail },
       select: { id: true, following: { select: { followingId: true } } },
     })
     if (cu) {
       currentUserId = cu.id
-      currentFollowingIds = cu.following.map((f) => f.followingId)
+      currentFollowingIds = cu.following.map((f: FollowingIdEdge) => f.followingId)
     }
   }
 
-  const following = user.following.map((f) => ({
+  const following = user.following.map((f: FollowingEdge) => ({
     id: f.following.id,
     username: f.following.username ?? '',
     name: f.following.name ?? f.following.username ?? '',
