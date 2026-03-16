@@ -8,6 +8,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
+type ProfilePost = {
+  id: string
+  createdAt: Date
+  caption: string
+  mediaUrl: string
+  mediaType: string
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ username: string }> }): Promise<Metadata> {
   const { username } = await params
   return { title: `@${username}` }
@@ -191,7 +199,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
               <p className="text-sm" style={{ color: '#60607a' }}>No posts yet.</p>
             </div>
           ) : (
-            user.posts.map((post) => (
+            user.posts.map((post: ProfilePost) => (
               <div
                 key={post.id}
                 className="rounded-2xl p-6 space-y-3"
