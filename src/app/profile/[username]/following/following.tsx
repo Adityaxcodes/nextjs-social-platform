@@ -2,15 +2,44 @@ import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getServerSession } from 'next-auth'
+import { Prisma } from '@prisma/client'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { Button } from '@/components/ui_follow/button'
 import { UserList } from '@/components/ui_follow/user-list'
 import { prisma } from '@/lib/prisma'
 
+type ProfileFollowingUser = Prisma.UserGetPayload<{
+  include: {
+    following: {
+      include: {
+        following: {
+          select: {
+            id: true
+            username: true
+            name: true
+            image: true
+          }
+        }
+      }
+    }
+  }
+}>
+
+type SessionUserFollowing = Prisma.UserGetPayload<{
+  select: {
+    id: true
+    following: {
+      select: {
+        followingId: true
+      }
+    }
+  }
+}>
+
 export default async function FollowingPage({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params
 
-  const user = await prisma.user.findUnique({
+  const user: ProfileFollowingUser | null = await prisma.user.findUnique({
     where: { username },
     include: {
       following: {
@@ -31,13 +60,13 @@ export default async function FollowingPage({ params }: { params: Promise<{ user
   let currentUserId: string | null = null
   let currentFollowingIds: string[] = []
   if (currentUserEmail) {
-    const cu = await prisma.user.findUnique({
+    const cu: SessionUserFollowing | null = await prisma.user.findUnique({
       where: { email: currentUserEmail },
       select: { id: true, following: { select: { followingId: true } } },
     })
     if (cu) {
       currentUserId = cu.id
-      currentFollowingIds = cu.following.map((f:any) => f.followingId)
+      currentFollowingIds = cu.following.map((f) => f.followingId)
     }
   }
 
