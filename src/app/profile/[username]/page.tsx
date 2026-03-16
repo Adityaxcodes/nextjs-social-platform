@@ -62,6 +62,8 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
     year: 'numeric',
   })
 
+  const userInterests = Array.isArray(user.interests) ? user.interests : []
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0f0f11' }}>
       {/* Nav spacer */}
@@ -154,9 +156,9 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
           </div>
 
           {/* Interests */}
-          {user.interests.length > 0 && (
+          {userInterests.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {user.interests.map((interest: string) => (
+              {userInterests.map((interest: string) => (
                 <span
                   key={interest}
                   className="px-3 py-1 rounded-full text-xs font-medium"
