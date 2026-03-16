@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
@@ -150,7 +151,14 @@ export default function SignupForm() {
       <div className="mb-8 text-center">
         <div className="flex items-center justify-center mb-4">
           <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center border border-white/20">
-            <span className="text-xl font-bold text-white">SH</span>
+            <Image
+              src="/assets/connective%20logo.png"
+              alt="Connective logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 object-contain"
+              priority
+            />
           </div>
         </div>
         <h1 className="text-2xl font-bold text-white mb-2">Get Started</h1>

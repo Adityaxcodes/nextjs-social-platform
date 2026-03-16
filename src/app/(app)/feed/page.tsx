@@ -4,6 +4,7 @@ import { Heart, MessageCircle, Share2, Search, Compass, Mail, Bookmark, User } f
 import { useState, useEffect, useRef } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CommentDrawer } from '@/components/ui_commentSection/comment-drawer';
 
 interface Post {
@@ -170,9 +171,16 @@ export default function Feed() {
             {/* Logo */}
             <div className="flex flex-shrink-0 items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-primary to-accent text-primary-foreground font-bold text-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                S
+                <Image
+                  src="/assets/connective%20logo.png"
+                  alt="Connective logo"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 object-contain"
+                  priority
+                />
               </div>
-              <span className="hidden font-bold text-lg text-foreground bg-clip-text sm:inline">Startup Hub</span>
+              <span className="hidden font-bold text-lg text-foreground bg-clip-text sm:inline">Connective</span>
             </div>
 
             {/* Search */}
