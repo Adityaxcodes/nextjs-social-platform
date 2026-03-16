@@ -37,7 +37,7 @@ export default async function FollowingPage({ params }: { params: Promise<{ user
     })
     if (cu) {
       currentUserId = cu.id
-      currentFollowingIds = cu.following.map((f) => f.followingId)
+      currentFollowingIds = cu.following.map((f:any) => f.followingId)
     }
   }
 
