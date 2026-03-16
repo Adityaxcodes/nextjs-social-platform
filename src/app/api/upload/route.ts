@@ -1,18 +1,59 @@
 import { NextResponse } from 'next/server'
-import { writeFile, mkdir } from 'fs/promises'
-import { existsSync } from 'fs'
-import path from 'path'
+import { Readable } from 'stream'
 import { getServerSession } from 'next-auth'
-import { put } from '@vercel/blob'
+import { v2 as cloudinary } from 'cloudinary'
 import { authOptions } from '../auth/[...nextauth]/route'
 
-const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads')
+export const runtime = 'nodejs'
+
 const MAX_SIZE = 10 * 1024 * 1024 // 10MB
-const ALLOWED_TYPES: Record<string, string> = {
-  'image/jpeg': '.jpg',
-  'image/png': '.png',
-  'image/webp': '.webp',
-  'video/mp4': '.mp4',
+const UPLOAD_FOLDER = process.env.CLOUDINARY_UPLOAD_FOLDER || 'uploads'
+const ALLOWED_TYPES: Record<string, 'image' | 'video'> = {
+  'image/jpeg': 'image',
+  'image/png': 'image',
+  'image/webp': 'image',
+  'video/mp4': 'video',
+}
+
+const getCloudinaryConfig = () => {
+  const cloud_name = process.env.CLOUDINARY_CLOUD_NAME
+  const api_key = process.env.CLOUDINARY_API_KEY
+  const api_secret = process.env.CLOUDINARY_API_SECRET
+
+  if (!cloud_name || !api_key || !api_secret) {
+    return null
+  }
+
+  return { cloud_name, api_key, api_secret }
+}
+
+const uploadBufferToCloudinary = (buffer: Buffer, file: File) => {
+  return new Promise<string>((resolve, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        folder: UPLOAD_FOLDER,
+        resource_type: ALLOWED_TYPES[file.type],
+        use_filename: true,
+        unique_filename: true,
+        overwrite: false,
+      },
+      (error, result) => {
+        if (error) {
+          reject(error)
+          return
+        }
+
+        if (!result?.secure_url) {
+          reject(new Error('Cloudinary did not return a secure URL'))
+          return
+        }
+
+        resolve(result.secure_url)
+      },
+    )
+
+    Readable.from(buffer).pipe(uploadStream)
+  })
 }
 
 export async function POST(req: Request) {
@@ -37,37 +78,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'File exceeds 10MB limit' }, { status: 400 })
     }
 
-    const ext = ALLOWED_TYPES[file.type]
-    const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`
+    const cloudinaryConfig = getCloudinaryConfig()
+    if (!cloudinaryConfig) {
+      return NextResponse.json(
+        { error: 'Cloudinary is not configured on the server' },
+        { status: 500 },
+      )
+    }
+
+    cloudinary.config(cloudinaryConfig)
+
     const buffer = Buffer.from(await file.arrayBuffer())
+    const url = await uploadBufferToCloudinary(buffer, file)
 
-    // Vercel runtimes are read-only, so persist uploads in Blob storage.
-    if (process.env.VERCEL === '1') {
-      if (!process.env.BLOB_READ_WRITE_TOKEN) {
-        return NextResponse.json(
-          { error: 'Upload storage is not configured on the server' },
-          { status: 500 },
-        )
-      }
-
-      const blob = await put(`uploads/${filename}`, buffer, {
-        access: 'public',
-        contentType: file.type,
-        token: process.env.BLOB_READ_WRITE_TOKEN,
-      })
-
-      return NextResponse.json({ url: blob.url })
-    }
-
-    // Local development fallback: store files in public/uploads.
-    if (!existsSync(UPLOAD_DIR)) {
-      await mkdir(UPLOAD_DIR, { recursive: true })
-    }
-
-    const filePath = path.join(UPLOAD_DIR, filename)
-    await writeFile(filePath, buffer)
-
-    return NextResponse.json({ url: `/uploads/${filename}` })
+    return NextResponse.json({ url })
   } catch (error) {
     console.error('Upload error:', error)
     return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 })
